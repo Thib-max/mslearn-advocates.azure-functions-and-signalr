@@ -30,16 +30,8 @@ printf "User name: $USER_NAME\n"
 SUBSCRIPTION_NAME=$1
 printf "Using subscription: ""$SUBSCRIPTION_NAME""\n"
 
-# Set the resource group name if not provided as a parameter
-RANDOM_STRING=$(openssl rand -hex 5)
 #printf "Using random string: $RANDOM_STRING\n"
-RESOURCE_GROUP_NAME="$USER_NAME-signalr-$RANDOM_STRING"
-
-# Create a resource group
-az group create \
-  --subscription "$SUBSCRIPTION_NAME" \
-  --name "$RESOURCE_GROUP_NAME" \
-  --location eastus
+RESOURCE_GROUP_NAME="learn-9de379c3-ed6f-4293-9370-4b304ebdcb05"
 
 # Set default resource group
 az configure --defaults group="$RESOURCE_GROUP_NAME"
